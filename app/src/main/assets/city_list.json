@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1185241,
+    "name": "Dhaka",
+    "country": "BD"
+  },
+  {
+    "id": 1336135,
+    "name": "Khulna",
+    "country": "BD"
+  },
+  {
+    "id": 1337200,
+    "name": "Chittagong",
+    "country": "BD"
+  },
+  {
+    "id": 1336134,
+    "name": "Coxs Bazar",
+    "country": "BD"
+  },
+  {
+    "id": 1185128,
+    "name": "Rajshahi",
+    "country": "BD"
+  },
+  {
+    "id": 1336137,
+    "name": "Barisal",
+    "country": "BD"
+  },
+  {
+    "id": 1185099,
+    "name": "Sylhet",
+    "country": "BD"
+  },
+  {
+    "id": 1185188,
+    "name": "Rangpur",
+    "country": "BD"
+  },
+  {
+    "id": 5056033,
+    "name": "London",
+    "country": "US"
+  },
+  {
+    "id": 1275004,
+    "name": "Kolkata",
+    "country": "IN"
+  },
+  {
+    "id": 108410,
+    "name": "Riyadh",
+    "country": "SA"
+  },
+  {
+    "id": 292968,
+    "name": "Abu Dhabi",
+    "country": "AE"
+  },
+  {
+    "id": 5128638,
+    "name": "New York",
+    "country": "US"
+  },
+  {
+    "id": 1850147,
+    "name": "Tokyo",
+    "country": "JP"
+  },
+  {
+    "id": 1176615,
+    "name": "Islamabad",
+    "country": "PK"
+  },
+  {
+    "id": 1261481,
+    "name": "New Delhi",
+    "country": "IN"
+  }
+]

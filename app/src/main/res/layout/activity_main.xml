@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    tools:context=".MainActivity">
+    tools:context=".features.weather_info_show.view.MainActivity">
 
     <include
         android:id="@+id/layout_input"
