@@ -60,7 +60,7 @@ def getBaseUrl() {
 
     String baseUrl = properties.getProperty("base_url")
     if(baseUrl==null)
-        throw new GradleException("Add 'base_url' field at local.properties file. For more details: https://github.com/hasancse91/weather-app-android-mvp-architecture/blob/master/README.md")
+        throw new GradleException("Add 'base_url' field at local.properties file. For more details: https://github.com/hasancse91/weather-app-android-mvvm/blob/master/README.md")
 
     return baseUrl
 }
@@ -71,7 +71,7 @@ def getAppId() {
 
     String appId = properties.getProperty("app_id")
     if(appId==null)
-        throw new GradleException("Add 'app_id' field at local.properties file. For more details: https://github.com/hasancse91/weather-app-android-mvp-architecture/blob/master/README.md")
+        throw new GradleException("Add 'app_id' field at local.properties file. For more details: https://github.com/hasancse91/weather-app-android-mvvm/blob/master/README.md")
 
     return appId
 }

@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="LabelStyle" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="DefaultTextStyle" parent="TextAppearance.MaterialComponents.Body1">
+
+    </style>
+
 </resources>
