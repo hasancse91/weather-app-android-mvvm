@@ -31,27 +31,27 @@ class MainActivity : AppCompatActivity() {
         // observe city list success data
         viewModel.cityListLiveData.observe(this, Observer { cityList ->
             this.cityList = cityList
-            Log.d("City", cityList.size.toString())
+            Log.e("City", cityList.size.toString())
         })
 
         // observe city list fetching failure
         viewModel.cityListFailureLiveData.observe(this, Observer { errorMessage ->
-            Log.d("City Error", errorMessage)
+            Log.e("City Error", errorMessage)
         })
 
         // observe weather info fetching success
         viewModel.weatherInfoLiveData.observe(this, Observer { weatherData ->
-            Log.d("Weather Data", weatherData.toString())
+            Log.e("Weather Data", weatherData.toString())
         })
 
         // observe weather info fetching failure
         viewModel.weatherInfoFailureLiveData.observe(this, Observer { errorMessage ->
-            Log.d("Weather Error", errorMessage)
+            Log.e("Weather Error", errorMessage)
         })
 
         // fetch data when button clicked
         btn_view_weather.setOnClickListener {
-            val selectedCityId = cityList[spinner.selectedItemPosition].id
+            val selectedCityId =0 //cityList[spinner.selectedItemPosition].id
             viewModel.getWeatherInfo(selectedCityId, model)
         }
     }

@@ -1,4 +1,4 @@
-package com.hellohasan.weatherappmvvm.features.weather_info_show.model
+package com.hellohasan.weatherappmvvm.common
 
 interface ModelCallback<T> {
     fun onSuccess(data: T)
