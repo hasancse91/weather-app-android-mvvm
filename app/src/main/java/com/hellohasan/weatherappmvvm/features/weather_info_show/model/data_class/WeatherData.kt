@@ -1,6 +1,9 @@
 package com.hellohasan.weatherappmvvm.features.weather_info_show.model.data_class
 
-data class WeatherDataModel(
+/**
+ * this class will be used in UI to show weather data
+ */
+data class WeatherData(
         var dateTime: String = "",
         var temperature: String = "0",
         var cityAndCountry: String = "",
