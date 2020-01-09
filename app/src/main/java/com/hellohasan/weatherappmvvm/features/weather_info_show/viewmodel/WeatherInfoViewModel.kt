@@ -6,8 +6,9 @@ import com.hellohasan.weatherappmvvm.features.weather_info_show.model.ModelCallb
 import com.hellohasan.weatherappmvvm.features.weather_info_show.model.WeatherInfoModel
 import com.hellohasan.weatherappmvvm.features.weather_info_show.model.data_class.City
 import com.hellohasan.weatherappmvvm.features.weather_info_show.model.data_class.WeatherData
+import com.hellohasan.weatherappmvvm.features.weather_info_show.model.data_class.WeatherInfoResponse
 
-class WeatherInfoViewModel(val model: WeatherInfoModel) : ViewModel() {
+class WeatherInfoViewModel : ViewModel() {
 
     /**
      * In our project, for sake for simplicity we used different LiveData for success and failure.
@@ -18,31 +19,40 @@ class WeatherInfoViewModel(val model: WeatherInfoModel) : ViewModel() {
     val cityListLiveData = MutableLiveData<List<City>>()
     val cityListFailureLiveData = MutableLiveData<String>()
     val weatherInfoLiveData = MutableLiveData<WeatherData>()
-    val weatherInfoFailureLiveDataModel = MutableLiveData<String>()
+    val weatherInfoFailureLiveData = MutableLiveData<String>()
 
-    fun getCityList() {
+    /**we can inject the instance of Model in Constructor using dependency injection.
+     * For sake of simplicity, I am ignoring it now. So we have to pass instance of model in every
+     * methods of ViewModel.
+     */
+    fun getCityList(model: WeatherInfoModel) {
 
         model.getCityList(object : ModelCallback<List<City>>{
             override fun onSuccess(data: List<City>) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                cityListLiveData.postValue(data)
             }
 
             override fun onError(throwable: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                cityListFailureLiveData.postValue(throwable.localizedMessage)
             }
         })
 
     }
 
-    fun getWeatherInfo(cityId: Int) {
+    /**we can inject the instance of Model in Constructor using dependency injection.
+     * For sake of simplicity, I am ignoring it now. So we have to pass instance of model in every
+     * methods of ViewModel.
+     */
+    fun getWeatherInfo(cityId: Int, model: WeatherInfoModel) {
 
-        model.getWeatherInfo(cityId, object : ModelCallback<WeatherData>{
-            override fun onSuccess(data: WeatherData) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        model.getWeatherInfo(cityId, object : ModelCallback<WeatherInfoResponse>{
+            override fun onSuccess(data: WeatherInfoResponse) {
+                // TODO: convert WeatherInfoResponse to WeatherData object
+                weatherInfoLiveData.postValue(WeatherData())
             }
 
             override fun onError(throwable: Throwable) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                weatherInfoFailureLiveData.postValue(throwable.localizedMessage)
             }
         })
     }
