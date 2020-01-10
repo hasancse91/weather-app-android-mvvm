@@ -72,6 +72,6 @@
         app:layout_constraintStart_toStartOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_weather_condition"
-        tools:text="broken cloudslks dflfd li " />
+        tools:text="broken cloud" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
