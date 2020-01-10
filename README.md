@@ -2,7 +2,7 @@
 
 MVVM Architecture is one of the most popular and latest architecture to develop a maintanable and managable codebase. We are developing a sample `Weater Forecast` Android App with `MVVM Architecture` using `Kotlin` language and `Retrofit` network calling library. **For simplification, I didn't use `Dagger`, `Coroutine` or `Rx` in this project.**
 
-<img src="https://raw.githubusercontent.com/hasancse91/weather-app-android-mvp-architecture/master/data/screenshot_1.png" width="250" height="444" />
+<img src="https://github.com/hasancse91/weather-app-android-mvvm/blob/master/data/screenshot_1.png" width="250" height="444" />
 
 ### Prerequisites
 Basic `Kotlin` and knowledge of `HTTP` request by `Retrofit` library are required for this project. If you already know `MVP Architecture` then this project will be very easy to understand. You can check my `MVP Architecture` Weather App [repository from here](https://github.com/hasancse91/weather-app-android-mvp-architecture). It will be helpful if you cover the MVP project then compare between MVP and MVVM.
