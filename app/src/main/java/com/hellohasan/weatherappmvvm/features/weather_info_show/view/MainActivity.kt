@@ -35,12 +35,12 @@ class MainActivity : AppCompatActivity() {
         // initialize ViewModel
         viewModel = ViewModelProviders.of(this).get(WeatherInfoViewModel::class.java)
 
+        // set LiveData and View listeners before data fetching
+        setLiveDataListeners()
+        setViewClickListener()
+
         // fetch city list when Activity open
         viewModel.getCityList(model)
-
-        setLiveDataListeners()
-
-        setViewClickListener()
     }
 
     private fun setViewClickListener() {
