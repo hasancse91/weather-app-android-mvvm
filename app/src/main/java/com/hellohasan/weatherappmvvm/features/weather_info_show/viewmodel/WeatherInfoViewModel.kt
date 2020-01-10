@@ -34,11 +34,11 @@ class WeatherInfoViewModel : ViewModel() {
         model.getCityList(object :
             RequestCompleteListener<MutableList<City>> {
             override fun onRequestSuccess(data: MutableList<City>) {
-                cityListLiveData.postValue(data)
+                cityListLiveData.postValue(data) // PUSH data to LiveData object
             }
 
             override fun onRequestFailed(errorMessage: String) {
-                cityListFailureLiveData.postValue(errorMessage)
+                cityListFailureLiveData.postValue(errorMessage) // PUSH error message to LiveData object
             }
         })
     }
@@ -49,13 +49,13 @@ class WeatherInfoViewModel : ViewModel() {
      */
     fun getWeatherInfo(cityId: Int, model: WeatherInfoShowModel) {
 
-        progressBarLiveData.postValue(true) // show progress bar
+        progressBarLiveData.postValue(true) // PUSH data to LiveData object to show progress bar
 
         model.getWeatherInfo(cityId, object :
             RequestCompleteListener<WeatherInfoResponse> {
             override fun onRequestSuccess(data: WeatherInfoResponse) {
 
-                // data formatting to show on UI
+                // business logic and data manipulation tasks should be done here
                 val weatherData = WeatherData(
                     dateTime = data.dt.unixTimestampToDateTimeString(),
                     temperature = data.main.temp.kelvinToCelsius().toString(),
@@ -69,14 +69,15 @@ class WeatherInfoViewModel : ViewModel() {
                     sunset = data.sys.sunset.unixTimestampToTimeString()
                 )
 
-                progressBarLiveData.postValue(false)
+                progressBarLiveData.postValue(false) // PUSH data to LiveData object to hide progress bar
 
-                weatherInfoLiveData.postValue(weatherData)
+                // After applying business logic and data manipulation, we push data to show on UI
+                weatherInfoLiveData.postValue(weatherData) // PUSH data to LiveData object
             }
 
             override fun onRequestFailed(errorMessage: String) {
                 progressBarLiveData.postValue(false) // hide progress bar
-                weatherInfoFailureLiveData.postValue(errorMessage)
+                weatherInfoFailureLiveData.postValue(errorMessage) // PUSH error message to LiveData object
             }
         })
     }

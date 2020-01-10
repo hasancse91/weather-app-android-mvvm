@@ -56,7 +56,6 @@ class WeatherInfoShowModelImpl(private val context: Context): WeatherInfoShowMod
             override fun onFailure(call: Call<WeatherInfoResponse>, t: Throwable) {
                 callback.onRequestFailed(t.localizedMessage!!) //let presenter know about failure
             }
-
         })
     }
 }
