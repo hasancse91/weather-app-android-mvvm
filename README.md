@@ -1,4 +1,4 @@
-# Android MVVM Architecture Sample (Kotlin + Retrofit) - Weather App
+# Android MVVM Architecture Sample (ViewModel + LiveData + Kotlin + Retrofit) - Weather App
 
 MVVM Architecture is one of the most popular and latest architecture to develop a maintanable and managable codebase. We are developing a sample `Weater Forecast` Android App with `MVVM Architecture` using `Kotlin` language and `Retrofit` network calling library.
 
