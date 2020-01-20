@@ -27,7 +27,7 @@ class WeatherInfoViewModel : ViewModel() {
 
     /**We can inject the instance of Model in Constructor using dependency injection.
      * For sake of simplicity, I am ignoring it now. So we have to pass instance of model in every
-     * methods of ViewModel.
+     * methods of ViewModel. Please be noted, it's not a good approach.
      */
     fun getCityList(model: WeatherInfoShowModel) {
 
@@ -45,7 +45,7 @@ class WeatherInfoViewModel : ViewModel() {
 
     /**We can inject the instance of Model in Constructor using dependency injection.
      * For sake of simplicity, I am ignoring it now. So we have to pass instance of model in every
-     * methods of ViewModel.
+     * methods of ViewModel. Pleas be noted, it's not a good approach.
      */
     fun getWeatherInfo(cityId: Int, model: WeatherInfoShowModel) {
 

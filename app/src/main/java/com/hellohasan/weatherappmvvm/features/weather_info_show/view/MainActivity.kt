@@ -39,7 +39,12 @@ class MainActivity : AppCompatActivity() {
         setLiveDataListeners()
         setViewClickListener()
 
-        // fetch city list when Activity open
+        /**
+         * Fetch city list when Activity open.
+         * It's not a very good way that, passing model in every methods of ViewModel. For the sake
+         * of simplicity I did so. In real production level App, we can inject out model to ViewModel
+         * as a parameter by any dependency injection library like Dagger.
+         */
         viewModel.getCityList(model)
     }
 
