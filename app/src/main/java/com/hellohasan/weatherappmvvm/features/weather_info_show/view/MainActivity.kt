@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.layout_weather_basic_info.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val model: WeatherInfoShowModel = WeatherInfoShowModelImpl(applicationContext)
+    private lateinit var model: WeatherInfoShowModel
     private lateinit var viewModel: WeatherInfoViewModel
 
     private var cityList: MutableList<City> = mutableListOf()
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // initialize ViewModel
+        model = WeatherInfoShowModelImpl(applicationContext)
         viewModel = ViewModelProviders.of(this).get(WeatherInfoViewModel::class.java)
 
         // set LiveData and View click listeners before the call for data fetching
