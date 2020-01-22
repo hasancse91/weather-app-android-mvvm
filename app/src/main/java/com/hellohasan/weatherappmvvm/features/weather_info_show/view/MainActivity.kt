@@ -61,14 +61,21 @@ class MainActivity : AppCompatActivity() {
     private fun setLiveDataListeners() {
 
         /**
-         * When ViewModel PUSH city list to LiveData then this method will be called. Here we subscribe
-         * the LiveData of City list. We don't pull city list from ViewModel. We subscribe to the
-         * data source for city list. When LiveData of city list is updated inside ViewModel, below
-         * method will triggered instantly.
+         * When ViewModel PUSH city list to LiveData then this `onChanged()`‍ method will be called.
+         * Here we subscribe the LiveData of City list. We don't pull city list from ViewModel.
+         * We subscribe to the data source for city list. When LiveData of city list is updated
+         * inside ViewModel, below onChanged() method will triggered instantly.
          * City list is fetching from a small local JSON file. So we don't need any ProgressBar here.
+         *
+         * For better understanding, I didn't use lambda in this method call. Rather thant lambda I
+         * implement `Observer` interface in general format. Hope you will understand the inline
+         * implementation of `Observer` interface. Rest of the `observe()` method, I've used lambda
+         * to short the code.
          */
-        viewModel.cityListLiveData.observe(this, Observer { cityList ->
-            setCityListSpinner(cityList)
+        viewModel.cityListLiveData.observe(this, object : Observer<MutableList<City>>{
+            override fun onChanged(t: MutableList<City>?) {
+                setCityListSpinner(cityList)
+            }
         })
 
         /**
@@ -77,6 +84,8 @@ class MainActivity : AppCompatActivity() {
          * of simplification I did it. We can handle all of our errors from our Activity or Fragment
          * Base classes. Another way is: using a Generic wrapper class where you can set the success
          * or failure status for any types of data model.
+         *
+         * Here I've used lambda expression to implement Observer interface in second parameter.
          */
         viewModel.cityListFailureLiveData.observe(this, Observer { errorMessage ->
             Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show()
@@ -85,6 +94,8 @@ class MainActivity : AppCompatActivity() {
         /**
          * ProgressBar visibility will be handled by this LiveData. ViewModel decides when Activity
          * should show ProgressBar and when hide.
+         *
+         * Here I've used lambda expression to implement Observer interface in second parameter.
          */
         viewModel.progressBarLiveData.observe(this, Observer { isShowLoader ->
             if (isShowLoader)
@@ -100,6 +111,8 @@ class MainActivity : AppCompatActivity() {
          * Callback method of Model. Then ViewModel apply some business logic and manipulate data.
          * Finally ViewModel PUSH WeatherData to `weatherInfoLiveData`. After PUSHING into it, below
          * method triggered instantly! Then we set the data on UI.
+         *
+         * Here I've used lambda expression to implement Observer interface in second parameter.
          */
         viewModel.weatherInfoLiveData.observe(this, Observer { weatherData ->
             setWeatherInfo(weatherData)
@@ -109,6 +122,8 @@ class MainActivity : AppCompatActivity() {
          * If ViewModel faces any error during Weather Info fetching API call by Model, then PUSH the
          * error message into `weatherInfoFailureLiveData`. After that, this method will be triggered.
          * Then we will hide the output view and show error message on UI.
+         *
+         * Here I've used lambda expression to implement Observer interface in second parameter.
          */
         viewModel.weatherInfoFailureLiveData.observe(this, Observer { errorMessage ->
             output_group.visibility = View.GONE
