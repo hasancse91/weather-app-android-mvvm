@@ -73,8 +73,8 @@ class MainActivity : AppCompatActivity() {
          * to short the code.
          */
         viewModel.cityListLiveData.observe(this, object : Observer<MutableList<City>>{
-            override fun onChanged(t: MutableList<City>) {
-                setCityListSpinner(t)
+            override fun onChanged(cities: MutableList<City>) {
+                setCityListSpinner(cities)
             }
         })
 
