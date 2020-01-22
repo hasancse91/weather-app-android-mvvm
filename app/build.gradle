@@ -43,7 +43,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
 
     // material design
-    implementation 'com.google.android.material:material:1.2.0-alpha03'
+    implementation 'com.google.android.material:material:1.2.0-alpha04'
 
     // network call related libraries
     implementation 'com.squareup.retrofit2:retrofit:2.6.2' // REST API calling library

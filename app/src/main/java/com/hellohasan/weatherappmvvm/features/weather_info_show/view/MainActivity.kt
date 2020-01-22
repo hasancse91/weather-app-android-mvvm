@@ -32,8 +32,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // initialize ViewModel
+        // initialize model. (I know we should not initialize model in View. But for simplicity...)
         model = WeatherInfoShowModelImpl(applicationContext)
+        // initialize ViewModel
         viewModel = ViewModelProviders.of(this).get(WeatherInfoViewModel::class.java)
 
         // set LiveData and View click listeners before the call for data fetching
