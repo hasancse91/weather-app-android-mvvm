@@ -2,6 +2,8 @@
 
 MVVM Architecture is one of the most popular and latest architecture to develop a maintanable and managable codebase. We are developing a sample `Weater Forecast` Android App with `MVVM Architecture` using `Kotlin` language and `Retrofit` network calling library. **For simplification, I didn't use `Dagger`, `Coroutine` or `Rx` in this project.** After completion of this repository, if you want to learn about `Dagger` implementation; please check [this repository for MVVM and Dagger implementation](https://github.com/hasancse91/weather-app-android-mvvm-dagger).
 
+Same weather app project is available for Flutter in [this repository](https://github.com/hasancse91/weather_app_flutter).
+
 <img src="https://github.com/hasancse91/weather-app-android-mvvm/blob/master/data/screenshot_1.png" width="250" height="444" />
 
 ### Prerequisites
